@@ -5,10 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PokemonsComponent } from './pokemons/list-pokemons/pokemons.component';
 
+import { PokemonTypeColorPipe } from './pokemons/pipes/pokemon-type-color.pipe';
+
 @NgModule({
   declarations: [
     AppComponent,
-    PokemonsComponent
+    PokemonsComponent,
+    PokemonTypeColorPipe
   ],
   imports: [
     BrowserModule,
