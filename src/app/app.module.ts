@@ -10,6 +10,8 @@ import { PokemonTypeColorPipe } from './pokemons/pipes/pokemon-type-color.pipe';
 import { BorderCardDirective } from './pokemons/directives/border-card.directive';
 import { EditPokemonComponent } from './pokemons/edit-pokemon/edit-pokemon.component';
 
+import { FormsModule } from '@angular/forms';
+import { FormPokemonComponent } from './pokemons/edit-pokemon/form-pokemon.component';
 
 
 @NgModule({
@@ -17,12 +19,15 @@ import { EditPokemonComponent } from './pokemons/edit-pokemon/edit-pokemon.compo
     AppComponent,
     DetailPokemonComponent,
     EditPokemonComponent,
+    FormPokemonComponent,
     PokemonsComponent,
     PokemonTypeColorPipe,
     BorderCardDirective
   ],
   imports: [
     BrowserModule,
+    // le FormsModule on l'import et non declarer car il existe au sein d'angular, il doit ce trover avant le AppRoutingModule
+    FormsModule,
     AppRoutingModule
   ],
   providers: [],
