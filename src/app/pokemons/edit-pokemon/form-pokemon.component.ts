@@ -27,11 +27,12 @@ export class FormPokemonComponent implements OnInit{
                 'Eau',
                 'Insecte',
                 'Normal',
-                'Electrique',
+                'Electrik',
                 'Poison',
-                'Dragon',
+                'Fée',
                 'Vol',
-                'Spectre'];
+                'Psy',
+                'Combat'];
     }
 
     goBack(){
@@ -68,5 +69,10 @@ export class FormPokemonComponent implements OnInit{
         return false;
     }
         return true;
+    }
+
+    onSubmit():void{
+        let link= ['/pokemon', this.pokemon.id];
+        this.router.navigate(link);
     }
 }
