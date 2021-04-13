@@ -3,6 +3,8 @@ import { Pokemon } from '../donnees-pokemons/pokemon';
 
 import { ActivatedRoute, Router } from '@angular/router';
 
+import { PokemonsService } from '../pokemon.service';
+
 @Component({
     selector: 'form-pokemon',
     templateUrl: './form-pokemon.component.html'
@@ -13,26 +15,13 @@ export class FormPokemonComponent implements OnInit{
     types: any = [];
     @Input() pokemon: any;
 
-    constructor(private route: ActivatedRoute, private router: Router){
-
+    constructor(private route: ActivatedRoute,
+                private router: Router,
+                private pokemonsService: PokemonsService){
     }
 
     ngOnInit(){
-        this.types = this.getPokemonsTypes();
-    }
-
-    getPokemonsTypes(): string[]{
-        return ['Plante',
-                'Feu',
-                'Eau',
-                'Insecte',
-                'Normal',
-                'Electrik',
-                'Poison',
-                'Fée',
-                'Vol',
-                'Psy',
-                'Combat'];
+        this.types = this.pokemonsService.getPokemonsTypes();
     }
 
     goBack(){

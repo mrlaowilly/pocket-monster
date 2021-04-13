@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 
 import { PageNotFoundComponent } from './page-not-found.component';
 import { FormsModule } from '@angular/forms';
-
 import { PokemonsModule } from './pokemons/Pokemons.modules';
 
 @NgModule({

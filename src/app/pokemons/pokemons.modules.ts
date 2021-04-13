@@ -13,6 +13,8 @@ import { FormPokemonComponent } from './edit-pokemon/form-pokemon.component';
 
 import { PokemonRoutingModule } from './pokemons.routing.module';
 
+import { PokemonsService } from './pokemon.service';
+
 @NgModule({
   declarations: [
     DetailPokemonComponent,
@@ -27,7 +29,7 @@ import { PokemonRoutingModule } from './pokemons.routing.module';
     FormsModule,
     PokemonRoutingModule
   ],
-  providers: [],
+  providers: [PokemonsService],
   bootstrap: []
 })
 export class PokemonsModule { }
