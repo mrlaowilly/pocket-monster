@@ -3,31 +3,21 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PokemonsComponent } from './pokemons/list-pokemons/pokemons.component';
-import { DetailPokemonComponent } from './pokemons/detail-pokemon/detail-pokemon.component';
 
-import { PokemonTypeColorPipe } from './pokemons/pipes/pokemon-type-color.pipe';
-import { BorderCardDirective } from './pokemons/directives/border-card.directive';
-import { EditPokemonComponent } from './pokemons/edit-pokemon/edit-pokemon.component';
-
+import { PageNotFoundComponent } from './page-not-found.component';
 import { FormsModule } from '@angular/forms';
-import { FormPokemonComponent } from './pokemons/edit-pokemon/form-pokemon.component';
 
+import { PokemonsModule } from './pokemons/Pokemons.modules';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DetailPokemonComponent,
-    EditPokemonComponent,
-    FormPokemonComponent,
-    PokemonsComponent,
-    PokemonTypeColorPipe,
-    BorderCardDirective
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
-    // le FormsModule on l'import et non declarer car il existe au sein d'angular, il doit ce trover avant le AppRoutingModule
     FormsModule,
+    PokemonsModule,
     AppRoutingModule
   ],
   providers: [],
