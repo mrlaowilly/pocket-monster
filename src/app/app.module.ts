@@ -8,12 +8,15 @@ import { DetailPokemonComponent } from './pokemons/detail-pokemon/detail-pokemon
 
 import { PokemonTypeColorPipe } from './pokemons/pipes/pokemon-type-color.pipe';
 import { BorderCardDirective } from './pokemons/directives/border-card.directive';
+import { EditPokemonComponent } from './pokemons/edit-pokemon/edit-pokemon.component';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
     DetailPokemonComponent,
+    EditPokemonComponent,
     PokemonsComponent,
     PokemonTypeColorPipe,
     BorderCardDirective

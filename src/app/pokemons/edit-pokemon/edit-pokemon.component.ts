@@ -5,24 +5,23 @@ import { LISTPOKEMONS } from '../donnees-pokemons/mock-pokemons';
 
 import { ActivatedRoute, Router } from '@angular/router';
 
-@Component ({
-    selector : 'detail-pokemon',
-    templateUrl : './detail-pokemon.component.html',
-
+@Component({
+    selector: 'edit-pokemon',
+    templateUrl: './edit-pokemon.component.html'
 })
-export class DetailPokemonComponent implements OnInit{
+
+export class EditPokemonComponent implements OnInit{
 
     pokemons: Pokemon[];
     pokemon: any = null;
 
-    constructor(private route: ActivatedRoute, private router: Router) {
-        this.pokemons = [];
+    constructor(private route: ActivatedRoute, private router: Router){
+        this.pokemons= [];
     }
 
-    ngOnInit() {
-
+    ngOnInit(){
         this.pokemons = LISTPOKEMONS;
-
+        
         let id = + this.route.snapshot.params.id;
         for(let i = 0; i < this.pokemons.length; i++){
             if(this.pokemons[i].id == id){
@@ -31,12 +30,4 @@ export class DetailPokemonComponent implements OnInit{
         }
     }
 
-    goBack():void{
-        this.router.navigate(['pokemon/all']);
-    }
-
-    goEdit(pokemon: Pokemon){
-        let link = ['/pokemon/edit', pokemon.id];
-        this.router.navigate(link);
-      }
 }
