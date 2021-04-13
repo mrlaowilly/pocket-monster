@@ -12,13 +12,18 @@ export class PokemonsComponent implements OnInit {
 
   pokemons: Pokemon[];
 
-  constructor() {
+  constructor(private router: Router) {
     this.pokemons = [];
    }
 
   ngOnInit(): void {
     this.pokemons = LISTPOKEMONS;
     
+  }
+
+  selectPokemon(pokemon: Pokemon){
+    let link = ['/pokemon', pokemon.id];
+    this.router.navigate(link);
   }
 
 }
