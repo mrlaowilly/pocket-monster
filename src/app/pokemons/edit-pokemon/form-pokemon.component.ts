@@ -21,8 +21,8 @@ export class FormPokemonComponent implements OnInit{
         this.types = this.pokemonsService.getPokemonsTypes();
     }
 
-    goBack(){
-        this.pokemonsService.goBack(this.pokemon);      
+    goBack(pokemon: Pokemon){
+        this.pokemonsService.goBack(pokemon);      
     }
 
     // Détermine si le type passé en paramètres appartient ou non au pokémon en cours d'édition.
@@ -57,6 +57,6 @@ export class FormPokemonComponent implements OnInit{
     }
 
     onSubmit():void{
-        this.pokemonsService.goBack(this.pokemon);      
+        this.pokemonsService.updatePokemon(this.pokemon).subscribe(()=>this.goBack(this.pokemon));    
     }
 }

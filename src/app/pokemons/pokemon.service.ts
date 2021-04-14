@@ -13,7 +13,7 @@ export class PokemonsService{
 
     pokemon : any = null;
     // point d'entréer pour recuperer les données du web api
-    private pokemonsUrl = "api/pokemons",
+    private pokemonsUrl = "api/pokemons";
 
     constructor(private route: ActivatedRoute,
                 private router: Router,
@@ -46,6 +46,28 @@ export class PokemonsService{
         return this.http.get<Pokemon>(url).pipe(
             tap(_=> this.log(`fetched pokemon id= ${id}`)),
             catchError(this.handleError<Pokemon>(`getPokemon id=${id}`))
+        );
+    }
+
+    updatePokemon(pokemon: Pokemon): Observable<Pokemon>{
+        const httpOptions = {
+            headers: new HttpHeaders({'Content-type': 'application/json'})
+        };
+    
+        return this.http.put<Pokemon>(this.pokemonsUrl, pokemon, httpOptions).pipe(
+            tap(_=> this.log(`updated pokemon id=${pokemon.id}`)),
+            catchError(this.handleError<any>('updatedPokemon error'))
+        );
+    }
+
+    deletePokemon(pokemon: Pokemon): Observable<Pokemon>{
+        const url =`${this.pokemonsUrl}/${pokemon.id}`
+        const httpOptions = {
+            headers: new HttpHeaders({'Content-type': 'application/json'})
+        };
+        return this.http.delete<Pokemon>(url, httpOptions).pipe(
+            tap(_=> this.log(`deleted pokemon id=${pokemon.id}`)),
+            catchError(this.handleError<any>('deletePokemon'))
         );
     }
 
