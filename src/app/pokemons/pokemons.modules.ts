@@ -12,15 +12,16 @@ import { FormsModule } from '@angular/forms';
 import { FormPokemonComponent } from './edit-pokemon/form-pokemon.component';
 
 import { PokemonRoutingModule } from './pokemons.routing.module';
-
+import { LoaderComponent } from '../loader.component';
 import { PokemonsService } from './pokemon.service';
 
 @NgModule({
   declarations: [
+    PokemonsComponent,
     DetailPokemonComponent,
     EditPokemonComponent,
     FormPokemonComponent,
-    PokemonsComponent,
+    LoaderComponent,
     PokemonTypeColorPipe,
     BorderCardDirective
   ],
