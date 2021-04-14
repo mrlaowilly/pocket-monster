@@ -1,8 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Pokemon } from '../donnees-pokemons/pokemon';
-
 import { ActivatedRoute, Router } from '@angular/router';
-
 import { PokemonsService } from '../pokemon.service';
 
 @Component({
@@ -11,7 +9,6 @@ import { PokemonsService } from '../pokemon.service';
 })
 
 export class FormPokemonComponent implements OnInit{
-
     types: any = [];
     @Input() pokemon: any;
 
