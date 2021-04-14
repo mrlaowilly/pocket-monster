@@ -5,6 +5,9 @@ import { AppComponent } from './app.component';
 import { PageNotFoundComponent } from './page-not-found.component';
 import { FormsModule } from '@angular/forms';
 import { PokemonsModule } from './pokemons/pokemons.modules';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService } from './in-memory-data-service';
 
 @NgModule({
   declarations: [
@@ -13,6 +16,9 @@ import { PokemonsModule } from './pokemons/pokemons.modules';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
+    // l'import du dessous est seulement pour le serveur distant virtuel)
+    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {dataEncapsulation: false}),
     FormsModule,
     PokemonsModule,
     AppRoutingModule
