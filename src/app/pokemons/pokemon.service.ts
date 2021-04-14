@@ -1,11 +1,15 @@
 import { Injectable } from '@angular/core';
 import { LISTPOKEMONS } from './donnees-pokemons/mock-pokemons';
 import { Pokemon } from './donnees-pokemons/pokemon';
+import { ActivatedRoute, Router } from '@angular/router';
+
 
 @Injectable()
 export class PokemonsService{
 
-    constructor(){}
+    pokemon : any = null;
+    constructor(private route: ActivatedRoute,
+                private router: Router){}
 
     //Retourne tous les pokémons
     getPokemons(): Pokemon[]{
@@ -35,5 +39,15 @@ export class PokemonsService{
                 'Vol',
                 'Psy',
                 'Combat'];
+    }
+
+    goBack(pokemon: any = null){
+        let link: any = [];
+        if(pokemon){
+            link= ['/pokemon', pokemon.id];
+        } else {
+            link= ['/pokemon/all'];
+        }
+        this.router.navigate(link);
     }
 }

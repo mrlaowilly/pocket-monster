@@ -23,7 +23,7 @@ export class DetailPokemonComponent implements OnInit{
     }
 
     goBack():void{
-        this.router.navigate(['pokemon/all']);
+        this.pokemonsService.goBack();      
     }
 
     goEdit(pokemon: Pokemon){

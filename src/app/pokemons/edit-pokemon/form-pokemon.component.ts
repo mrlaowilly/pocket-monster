@@ -22,8 +22,7 @@ export class FormPokemonComponent implements OnInit{
     }
 
     goBack(){
-        let link = ['/pokemon', this.pokemon.id]
-        this.router.navigate(link);        
+        this.pokemonsService.goBack(this.pokemon);      
     }
 
     // Détermine si le type passé en paramètres appartient ou non au pokémon en cours d'édition.
@@ -58,7 +57,6 @@ export class FormPokemonComponent implements OnInit{
     }
 
     onSubmit():void{
-        let link= ['/pokemon', this.pokemon.id];
-        this.router.navigate(link);
+        this.pokemonsService.goBack(this.pokemon);      
     }
 }
