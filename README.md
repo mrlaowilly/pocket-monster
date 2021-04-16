@@ -1,9 +1,9 @@
 # Projet DSP Angular et pockemonstre WiLLY/ANIS/EMMANUEL
-# Cloner le projet
-# NPM INSTALL
-# Ouvrer n'importe quel fichier et enregistrer avec CTRL V ou POMME V
-# ng serve --open
-# Enjoy
+## Cloner le projet
+## NPM INSTALL
+## Ouvrer n'importe quel fichier et enregistrer avec CTRL V ou POMME V
+## ng serve --open
+## Enjoy
 
 
 
