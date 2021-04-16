@@ -15,12 +15,17 @@ import { FormPokemonComponent } from './edit-pokemon/form-pokemon.component';
 import { PokemonRoutingModule } from './pokemons.routing.module';
 import { LoaderComponent } from '../loader.component';
 import { PokemonsService } from './pokemon.service';
+import { AddPokemonComponent } from './add-pokemon/add-pokemon.component';
+// import { AuthGuard } from '../auth-guard.service';
+// import { AuthService } from '../auth.service';
+
 
 @NgModule({
   declarations: [
     PokemonsComponent,
     DetailPokemonComponent,
     EditPokemonComponent,
+    AddPokemonComponent,
     PokemonSearchComponent,
     FormPokemonComponent,
     LoaderComponent,
@@ -33,6 +38,7 @@ import { PokemonsService } from './pokemon.service';
     PokemonRoutingModule
   ],
   providers: [PokemonsService],
+  //   providers: [PokemonsService, AuthGuard, AuthService],
   bootstrap: []
 })
 export class PokemonsModule { }

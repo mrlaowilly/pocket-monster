@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { PokemonsComponent } from './list-pokemons/pokemons.component';
 import { DetailPokemonComponent } from './detail-pokemon/detail-pokemon.component';
 import { EditPokemonComponent } from './edit-pokemon/edit-pokemon.component';
+import { AddPokemonComponent } from './add-pokemon/add-pokemon.component';
 
 
 const pokemonsRoutes: Routes = [
@@ -12,6 +13,7 @@ const pokemonsRoutes: Routes = [
         path: 'pokemon',
         children: [
             { path: 'all', component: PokemonsComponent},
+            { path: 'add', component: AddPokemonComponent},
             { path: 'edit/:id', component: EditPokemonComponent},
             { path: ':id', component: DetailPokemonComponent},
         ]
